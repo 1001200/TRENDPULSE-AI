@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --vectra-primary: #EA580C;
+  --vectra-secondary: #262626;
+  --vectra-tertiary: #F0FA06;
+  --vectra-bg: #FFFFFF;
+  --vectra-surface: #FAFAFA;
+  --vectra-text: #171717;
+  --vectra-text-muted: #525252;
+  --vectra-border: #E5E5E5;
+  --vectra-border-strong: #D4D4D4;
+}
+
+.vectra-root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #FFFFFF;
+  color: #171717;
+  min-height: 100vh;
+}
+
+/* Technical Grid Canvas Background */
+.vectra-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Hairline Glass Card */
+.vectra-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 0.8px solid #E5E5E5;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vectra-card:hover {
+  border-color: #D4D4D4;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+}
+
+/* Vectra Pill Button */
+.vectra-btn-primary {
+  background-color: #171717;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border: 1px solid #171717;
+  transition: all 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.vectra-btn-primary:hover {
+  background-color: #262626;
+  transform: translateY(-0.5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.vectra-btn-accent {
+  background-color: #EA580C;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border: 1px solid #EA580C;
+  transition: all 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.vectra-btn-accent:hover {
+  background-color: #c2410c;
+  transform: translateY(-0.5px);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+}
+
+.vectra-btn-secondary {
+  background-color: #FFFFFF;
+  color: #171717;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border: 1px solid #D4D4D4;
+  transition: all 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.vectra-btn-secondary:hover {
+  background-color: #FAFAFA;
+  border-color: #A3A3A3;
+}
+
+/* Gradient Hairline Shell */
+.vectra-gradient-shell {
+  position: relative;
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.15) 0%, rgba(240, 250, 6, 0.1) 50%, rgba(0, 0, 0, 0.05) 100%);
+  padding: 1px;
+  border-radius: 14px;
+}
+
+.vectra-gradient-shell > div {
+  background: #FFFFFF;
+  border-radius: 13px;
+}
+
+/* Typography resets */
+.vectra-root h1,
+.vectra-root h2,
+.vectra-root h3,
+.vectra-root h4 {
+  font-family: 'Inter', sans-serif !important;
+  text-transform: none !important;
+  color: #171717 !important;
+  letter-spacing: -0.025em;
+}

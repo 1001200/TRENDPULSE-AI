@@ -1,0 +1,13 @@
+pandas
+openpyxl
+fastapi
+uvicorn
+python-multipart
+sqlalchemy
+pymysql
+pydantic
+python-dotenv
+passlib
+python-jose
+scikit-learn
+openai

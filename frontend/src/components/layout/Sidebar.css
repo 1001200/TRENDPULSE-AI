@@ -1,0 +1,236 @@
+.sidebar {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--bg-canvas);
+  border-right: 4px solid var(--bauhaus-black);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  padding: 20px 14px;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--bauhaus-black);
+  margin-bottom: 14px;
+}
+
+/* ── Bauhaus Geometric Logo Trio ── */
+.bauhaus-logo-trio {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.bauhaus-shape {
+  display: inline-block;
+  box-shadow: 2px 2px 0px 0px var(--bauhaus-black);
+}
+
+.bauhaus-shape--circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: var(--bauhaus-red);
+  border: 2px solid var(--bauhaus-black);
+}
+
+.bauhaus-shape--square {
+  width: 16px;
+  height: 16px;
+  border-radius: 0px;
+  background: var(--bauhaus-blue);
+  border: 2px solid var(--bauhaus-black);
+}
+
+.bauhaus-shape--triangle {
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 18px solid var(--bauhaus-yellow);
+  box-shadow: none;
+  filter: drop-shadow(2px 2px 0px var(--bauhaus-black));
+}
+
+.sidebar-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--bauhaus-black);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.sidebar-subtitle {
+  font-size: 0.65rem;
+  color: var(--bauhaus-black);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 3px;
+}
+
+/* ── Active Store Selector ── */
+.sidebar-store-selector {
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--bauhaus-black);
+}
+
+.sidebar-store-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.sidebar-select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-store-select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bauhaus-white);
+  border: 2px solid var(--bauhaus-black);
+  border-radius: 0px;
+  padding: 7px 28px 7px 10px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 900;
+  color: var(--bauhaus-black);
+  box-shadow: 2px 2px 0px 0px var(--bauhaus-black);
+  cursor: pointer;
+  outline: none;
+}
+
+.sidebar-store-select:focus {
+  background: var(--bauhaus-yellow-lt);
+}
+
+.select-arrow {
+  position: absolute;
+  right: 8px;
+  pointer-events: none;
+  color: var(--bauhaus-black);
+}
+
+/* ── Scrollable Nav Area ── */
+.sidebar-nav-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-section-label {
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--bauhaus-black);
+  padding: 2px 4px;
+  margin-bottom: 6px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 0px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: var(--bauhaus-black);
+  text-decoration: none;
+  border: 2px solid var(--bauhaus-black);
+  background: var(--bauhaus-white);
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  box-shadow: 2px 2px 0px 0px var(--bauhaus-black);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.nav-link-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-item-badge {
+  font-size: 0.62rem;
+  font-weight: 900;
+  padding: 1px 5px;
+  background: var(--bauhaus-yellow);
+  color: var(--bauhaus-black);
+  border: 1px solid var(--bauhaus-black);
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0px 0px var(--bauhaus-black);
+  background: var(--bauhaus-yellow-lt);
+  text-decoration: none;
+}
+
+.nav-link:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.nav-link--active {
+  background: var(--bauhaus-yellow);
+  color: var(--bauhaus-black);
+  box-shadow: 3px 3px 0px 0px var(--bauhaus-black);
+  border-width: 2px;
+  font-weight: 900;
+}
+
+.nav-link--active .nav-item-badge {
+  background: var(--bauhaus-black);
+  color: var(--bauhaus-white);
+}
+
+.nav-link--danger {
+  background: var(--bauhaus-white);
+  color: var(--bauhaus-black);
+}
+
+.nav-link--danger:hover {
+  background: var(--bauhaus-red);
+  color: var(--bauhaus-white);
+}
+
+.sidebar-footer {
+  padding-top: 12px;
+  border-top: 2px solid var(--bauhaus-black);
+  margin-top: 8px;
+}

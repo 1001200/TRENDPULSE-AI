@@ -1,0 +1,16 @@
+Transaction Date,Item Name & Fit,Item Category,Units Sold,Unit Price (INR),Customer ID,Order Reference,Discount %
+2026-07-05,Men's Acid Washed Oversized Heavyweight Graphic Tee - Vintage Black / M,Tops,10,799,CUST_001,ORD_101,0
+2026-07-05,Men's Relaxed Fit Carpenter Denim Jeans - Indigo / 32x30,Bottoms,5,1499,CUST_001,ORD_101,0
+2026-07-12,Women's Relaxed Fit French Terry Pullover Hoodie - Sage Green / S,Tops,8,1299,CUST_002,ORD_102,5
+2026-07-18,Women's Cropped Linen Button-Up Shirt - Dusty Rose / S,Tops,6,999,CUST_003,ORD_103,10
+2026-07-22,Men's Acid Washed Oversized Heavyweight Graphic Tee - Vintage Black / L,Tops,12,799,CUST_004,ORD_104,0
+2026-07-28,Men's Relaxed Fit Carpenter Denim Jeans - Indigo / 34x32,Bottoms,4,1499,CUST_005,ORD_105,0
+2026-08-03,Men's Acid Washed Oversized Heavyweight Graphic Tee - Vintage Black / M,Tops,15,799,CUST_001,ORD_106,0
+2026-08-03,Women's Relaxed Fit French Terry Pullover Hoodie - Sage Green / M,Tops,10,1299,CUST_001,ORD_106,0
+2026-08-10,Men's Acid Washed Oversized Heavyweight Graphic Tee - Vintage Black / XL,Tops,8,799,CUST_002,ORD_107,0
+2026-08-15,Women's Cropped Linen Button-Up Shirt - Dusty Rose / M,Tops,12,999,CUST_006,ORD_108,0
+2026-08-20,Men's Relaxed Fit Carpenter Denim Jeans - Indigo / 32x30,Bottoms,7,1499,CUST_003,ORD_109,0
+2026-08-25,Men's Acid Washed Oversized Heavyweight Graphic Tee - Vintage Black / L,Tops,200,699,WHOLESALE_BOUTIQUE_01,ORD_BULK_01,15
+2026-09-02,Men's Acid Washed Oversized Heavyweight Graphic Tee - Vintage Black / M,Tops,20,849,CUST_001,ORD_110,0
+2026-09-05,Women's Relaxed Fit French Terry Pullover Hoodie - Charcoal / L,Tops,14,1349,CUST_007,ORD_111,0
+2026-09-10,Men's Relaxed Fit Carpenter Denim Jeans - Indigo / 34x32,Bottoms,9,1549,CUST_004,ORD_112,0
