@@ -1,118 +1,83 @@
-import { NavLink, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import {
-  Zap, MessageSquare, Sliders, Shirt, IndianRupee,
-  Sparkles, Heart, Database, Upload, LogOut, ChevronDown
+  LayoutDashboard,
+  BarChart2,
+  ShoppingBag,
+  Tag,
+  Users,
+  Flame,
+  UploadCloud,
+  Settings,
+  Sparkles
 } from 'lucide-react'
-import { useStore } from '../../context/StoreContext'
-import './Sidebar.css'
 
-const operationsNav = [
-  { to: '/briefing',   icon: Zap,           label: 'CEO BRIEFING',      badge: '60-Sec' },
-  { to: '/copilot',    icon: MessageSquare, label: 'AI COPILOT',        badge: 'Chat' },
-  { to: '/simulator',  icon: Sliders,       label: 'WHAT-IF SIMULATOR', badge: 'Model' },
-  { to: '/inventory',  icon: Shirt,         label: 'INVENTORY & SIZES' },
-  { to: '/economics',  icon: IndianRupee,   label: 'UNIT ECONOMICS' },
-  { to: '/trends',     icon: Sparkles,      label: 'VIRAL TRENDS' },
-  { to: '/customers',  icon: Heart,         label: 'CUSTOMER CHURN' },
-]
-
-const managementNav = [
-  { to: '/analyst', icon: Sparkles, label: 'AUTO ANALYST', badge: 'NEW' },
-  { to: '/admin',   icon: Database, label: 'ALL DATASETS' },
-  { to: '/upload',  icon: Upload,   label: 'UPLOAD DATA' },
+const navGroups = [
+  {
+    title: 'MENU',
+    items: [
+      { path: '/', label: 'Overview', icon: LayoutDashboard },
+      { path: '/sales', label: 'Sales Performance', icon: BarChart2 },
+      { path: '/products', label: 'Products', icon: ShoppingBag },
+      { path: '/sizes-pricing', label: 'Sizes & Pricing', icon: Tag },
+      { path: '/customers', label: 'Customers', icon: Users },
+      { path: '/trends', label: 'Trends', icon: Flame },
+    ]
+  },
+  {
+    title: 'TOOLS',
+    items: [
+      { path: '/upload', label: 'Upload Data', icon: UploadCloud },
+      { path: '/settings', label: 'Settings', icon: Settings },
+    ]
+  }
 ]
 
 export default function Sidebar() {
-  const navigate = useNavigate()
-  const { datasets, activeDatasetId, selectStore, dataset } = useStore()
-
-  const handleLogout = () => {
-    localStorage.removeItem('tp_token')
-    navigate('/login')
-  }
-
   return (
     <aside className="sidebar">
-      {/* Bauhaus Geometric Brand Trio */}
-      <div className="sidebar-brand">
-        <div className="bauhaus-logo-trio">
-          <span className="bauhaus-shape bauhaus-shape--circle" />
-          <span className="bauhaus-shape bauhaus-shape--square" />
-          <span className="bauhaus-shape bauhaus-shape--triangle" />
+      {/* Brand Header */}
+      <div className="sidebar-header">
+        <div className="brand-logo-icon">
+          <Sparkles size={18} strokeWidth={2.2} />
         </div>
-        <div className="sidebar-brand-text">
-          <div className="sidebar-title">TRENDPULSE</div>
-          <div className="sidebar-subtitle">FASHION INTELLIGENCE</div>
+        <div className="brand-title-wrap">
+          <span className="brand-title">TrendPulse</span>
+          <span className="brand-tag">RETAIL INTELLIGENCE</span>
         </div>
       </div>
 
-      {/* Active Store Selector */}
-      <div className="sidebar-store-selector">
-        <label className="sidebar-store-label">ACTIVE STORE DATASET</label>
-        <div className="sidebar-select-wrap">
-          <select
-            className="sidebar-store-select"
-            value={activeDatasetId || ''}
-            onChange={(e) => selectStore(e.target.value)}
-          >
-            {datasets.map((d) => (
-              <option key={d.id} value={d.id}>
-                #{d.id} • {d.filename.slice(0, 20)}
-              </option>
-            ))}
-            {datasets.length === 0 && (
-              <option value="">No datasets found</option>
-            )}
-          </select>
-          <ChevronDown size={14} className="select-arrow" />
-        </div>
-      </div>
+      {/* Navigation Sections */}
+      <nav className="sidebar-nav">
+        {navGroups.map((group, idx) => (
+          <div key={idx} className="nav-group-section">
+            <div className="nav-section-label">{group.title}</div>
+            {group.items.map((item) => {
+              const Icon = item.icon
+              return (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `nav-item ${isActive ? 'active' : ''}`
+                  }
+                  end={item.path === '/'}
+                >
+                  <Icon className="nav-icon" size={17} strokeWidth={1.9} />
+                  <span className="nav-label">{item.label}</span>
+                </NavLink>
+              )
+            })}
+          </div>
+        ))}
+      </nav>
 
-      {/* Scrollable Nav Area */}
-      <div className="sidebar-nav-scroll">
-        {/* Operations Section */}
-        <div className="nav-section-label">OPERATIONS</div>
-        <nav className="sidebar-nav">
-          {operationsNav.map(({ to, icon: Icon, label, badge }) => (
-            <NavLink
-              key={to}
-              to={to}
-              className={({ isActive }) =>
-                `nav-link ${isActive ? 'nav-link--active' : ''}`
-              }
-            >
-              <Icon size={16} strokeWidth={2.5} />
-              <span className="nav-link-text">{label}</span>
-              {badge && <span className="nav-item-badge">{badge}</span>}
-            </NavLink>
-          ))}
-        </nav>
-
-        {/* Management Section */}
-        <div className="nav-section-label" style={{ marginTop: 20 }}>CATALOG DATA</div>
-        <nav className="sidebar-nav">
-          {managementNav.map(({ to, icon: Icon, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              end={to === '/'}
-              className={({ isActive }) =>
-                `nav-link ${isActive ? 'nav-link--active' : ''}`
-              }
-            >
-              <Icon size={16} strokeWidth={2.5} />
-              <span className="nav-link-text">{label}</span>
-            </NavLink>
-          ))}
-        </nav>
-      </div>
-
-      {/* Footer */}
+      {/* Sidebar Footer with Live Status */}
       <div className="sidebar-footer">
-        <button className="nav-link nav-link--danger" onClick={handleLogout}>
-          <LogOut size={16} strokeWidth={2.5} />
-          <span>LOGOUT</span>
-        </button>
+        <div className="sidebar-status-pill">
+          <span className="sidebar-status-dot" />
+          <span className="sidebar-status-text">Fashion BI Engine</span>
+        </div>
       </div>
     </aside>
   )
